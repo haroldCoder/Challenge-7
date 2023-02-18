@@ -9,8 +9,13 @@ import react from '../assets/reactjs.png'
 import angular from '../assets/angular.png'
 import { GitHub } from '@mui/icons-material'
 import LanguageIcon from '@mui/icons-material/Language';
+import { Button } from '@mui/material'
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 export default function Portfolio() {
+  const phone = '+573006297804'; // Número de teléfono del negocio
+  const message = '¡Hola!';
+
   const skills = [
     {
       name: "HTML5",
@@ -41,6 +46,9 @@ export default function Portfolio() {
       cover: angular
     }
   ]
+  const handleClick = () => {
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+  };
   return (
     <div className='text-white p-4'>    
         <section className='flex justify-center content-center flex-wrap mt-4'>
@@ -53,10 +61,11 @@ export default function Portfolio() {
               <a href="https://website-harold-koderx.netlify.app/"><LanguageIcon style={{fontSize: "36px"}} /></a>
             </div>
         </section>
-        <section className='m-32'>
+        <section className='m-20'>
             <p className='text-md text-white font-mono text-center'>Desarrollador full stack web, autodidacta, proactivo, colaborador, aprendizaje agil, predispuesto, con 3 años de aprendizaje autonomo en el area de la programacion y el desarrollo.</p>
         </section>
-        <section className='p-2 mt-6 flex'>
+          <Button variant="outlined" className='sticky left-[45%] p-8 mb-12' color="success" onClick={handleClick}>Contactame <WhatsAppIcon className='ml-4'/></Button>
+        <section className='p-2 mt-10 flex'>
           {
             skills.map(e=>(
               <div className='card w-[25%] rounded-lg mr-6 bg-gray-600 p-7'>

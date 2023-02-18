@@ -23,7 +23,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Principal />} />
         <Route path='/portafolio' element={isAdmin ? <Portfolio /> : <Navigate to='/' />} />
-        <Route path='/informacion-general' element={<Infogeneral />} />
+        <Route path='/Informacion general' element={<Infogeneral />} />
         <Route path='/usuarios' element={<Usuarios />} />
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>
